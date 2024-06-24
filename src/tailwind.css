@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+NZ:wght@100..400&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  div > div {
+    @apply m-2 p-2 border-red-700 border-2;
+  }
+
+  button {
+    @apply border-2 py-1 px-3 my-1 hover:bg-red-300 bg-red-200 block;
+  }
+
+  input {
+    @apply border-2 my-2;
+  }
+
+  h1 {
+    @apply my-2 underline underline-offset-4 text-rose-600;
+  }
+
+  span {
+    @apply text-indigo-600;
+  }
+}
