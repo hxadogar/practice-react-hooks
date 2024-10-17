@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Details } from "./UseContext";
 import Child1 from "./Child1";
 import Child2 from "./Child2";

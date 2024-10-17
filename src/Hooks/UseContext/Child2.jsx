@@ -1,7 +1,8 @@
-import React , {useContext} from 'react'
+import {useContext} from 'react'
 import { Details } from './UseContext'
 
 const Child2 = () => {
+  console.log('render child 2')
   const {name, age} = useContext(Details);
   
   return (

@@ -1,14 +1,15 @@
-import React, { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const UseRef = () => {
   const [name, setName] = useState("");
 
   const count = useRef(0);
-
   const inputEl = useRef();
+
   function handleClick() {
     inputEl.current.style.width = "500px";
     inputEl.current.focus();
+    inputEl.current.style.backgroundColor = "lightGreen";
   }
 
   function HandleEnterKey() {
@@ -17,11 +18,7 @@ const UseRef = () => {
   }
 
   useEffect(() => {
-    count.current = count.current + 1;
-  });
-
-  useEffect(() => {
-    inputEl.current.focus();
+    count.current++;
   });
 
   return (
@@ -41,7 +38,9 @@ const UseRef = () => {
         onKeyDown={(e) => (e.key === "Enter" ? HandleEnterKey() : null)}
         onChange={(e) => setName(e.target.value)}
       />
-      <button onClick={handleClick}>click</button>
+      <button onClick={handleClick}>
+        focus | color change | increase width
+      </button>
     </div>
   );
 };

@@ -1,10 +1,10 @@
-import React, { createContext, useState, useEffect } from "react";
+import { createContext, useState, useEffect } from "react";
 import Main from "./Main";
 
 export const Details = createContext();
 
 const UseContext = () => {
-  const [detail, setDetail] = useState({ name: "Dogar", age: 20, todo: [] });
+  const [detail, setDetail] = useState({ name: "Hxadogar", age: 20, todo: [] });
 
   useEffect(() => {
     async function getTodo(endpoint) {
@@ -35,16 +35,34 @@ const UseContext = () => {
       <p>
         <span>{detail.age}</span>
       </p>
-
       <ul>
         {detail.todo &&
-          detail.todo.map((todo) => <li className="list-disc list-inside" key={todo.id}>{todo.title}</li>)}
+          detail.todo.map((todo) => (
+            <li className="list-disc list-inside" key={todo.id}>
+              {todo.title}
+            </li>
+          ))}
       </ul>
 
-      <input placeholder="Enter Name" type="text" onChange={e => setDetail(prev => ({...prev, name: e.target.value}))}/>
-      <input placeholder="Enter Age" type="text" inputMode="numeric" pattern="[0-9]*" onChange={e => setDetail(prev => ({...prev, age: e.target.value}))}/>
+      <input
+        placeholder="Enter Name"
+        type="text"
+        onChange={(e) =>
+          setDetail((prev) => ({ ...prev, name: e.target.value }))
+        }
+      />
+      <input
+        placeholder="Enter Age"
+        // type="number"
+        type="text"
+        inputMode="numeric"
+        pattern="[0-9]*"
+        onChange={(e) =>
+          setDetail((prev) => ({ ...prev, age: e.target.value }))
+        }
+      />
 
-      <Details.Provider value={{...detail, setDetail}}>
+      <Details.Provider value={{ ...detail, setDetail }}>
         <Main />
       </Details.Provider>
     </div>

@@ -13,6 +13,9 @@ import UseLayout from "./Hooks/UseLayout";
 const App = () => {
   return (
     <>
+      <h1 className="flex justify-center text-3xl">
+        Learn React Hooks
+      </h1>
       {/* UseState */}
       <UseStateCounter />
       <UseStateInput />

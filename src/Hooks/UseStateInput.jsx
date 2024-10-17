@@ -1,18 +1,16 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UseStateInput = () => {
   const [name, setName] = useState("");
+  const [fatherName, setFatherName] = useState("");
 
   function handleChanges(e) {
     setName(e.target.value);
   }
 
-  // function in input
-  const [fatherName, setFatherName] = useState("");
-
   return (
     <div>
-      <h1>UserState with Input</h1>
+      <h1>UseState with Input</h1>
       <div>
         <p>
           My Name is: <span>{name}</span>

@@ -1,22 +1,21 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UseStateObject = () => {
-  const [detail, setDetail] = useState({ counter: 0, name: "" });
+  const [detail, setDetail] = useState({ age: 0, name: "" });
 
   function increase() {
     setDetail((prev) => ({
       ...prev,
-      counter: prev.counter + 1,
+      age: prev.age + 1,
     }));
   }
   function decrease() {
+    // not negtive number allowed
+    if (detail.age === 0) return;
     setDetail((prev) => ({
       ...prev,
-      counter: prev.counter - 1,
+      age: prev.age - 1,
     }));
-
-    // when zero console it
-    detail.counter <= 1 ? console.log("zero") : null;
   }
 
   return (
@@ -27,7 +26,7 @@ const UseStateObject = () => {
         My name is: <span>{detail.name}</span>
       </p>
       <p>
-        You Click: <span>{detail.counter}</span>
+        My Age: <span>{detail.age}</span>
       </p>
 
       <input

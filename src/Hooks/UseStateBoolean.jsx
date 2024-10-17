@@ -1,17 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UseStateBoolean = () => {
-  const [isopen, setIsOpen] = useState(true);
+  const [show, setShow] = useState(true);
 
   return (
     <div>
       <h1>UseState for Boolean </h1>
 
-      <button onClick={() => setIsOpen(!isopen)}>
-        {isopen ? "Show" : "Hide"}
+      <button onClick={() => setShow(!show)}>
+        {show ? "Hide" : "Show"}
       </button>
 
-      <div className={`${isopen ? "hidden" : "block"}`}>
+      <div className={`${show ? "block" : "hidden"}`}>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore,
         quibusdam.
       </div>

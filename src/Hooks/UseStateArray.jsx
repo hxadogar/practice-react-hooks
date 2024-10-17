@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UseStateArray = () => {
   const [items, setItems] = useState([]);
@@ -10,12 +10,13 @@ const UseStateArray = () => {
   }
 
   const handleDeleteItemBtn = () => {
-    setItems(items.filter((item, i) => i !== +addItem));
+    setItems(items.filter((_, i) => i !== +addItem - 1));
   };
 
   return (
     <div>
       <h1>UseState with Array</h1>
+      <p>for remove Enter [index] number</p>
 
       <ul>
         {items &&

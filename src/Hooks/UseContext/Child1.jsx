@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Details } from './UseContext';
+import { useContext } from "react";
+import { Details } from "./UseContext";
 
 const Child1 = () => {
   const { name, age, setDetail } = useContext(Details);
